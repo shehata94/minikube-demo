@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongodb-deployment
+  labels:
+    app: mongodb
+spec:
+  replicas: 1
+  selector:
+    matachLabels:
+      app: mongodb
+  template:
+    metadata:
+      labels: mongdb
+    spec: 
+      containers:
+      - name: mongodb
+        image: mongo
